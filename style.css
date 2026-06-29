@@ -435,6 +435,13 @@ button:hover {
     cursor: pointer;
     display: none;
     z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-topo i{
+    line-height: 1;
 }
 
 .btn-topo:hover{
@@ -476,7 +483,6 @@ button:hover {
 }
 
 /* FOOTER do PORTIFOLIO */
-
 footer{
     background-color: #2B272A;
     color: bisque;
