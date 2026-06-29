@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugo Aguiar</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div id="loading-screen">
+        <div class="loading-box">
+            <p class="loading-text">Carregando portifólio...</p>
+
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>  
+            <h1 id="loading-percent">0%</h1>
+        </div>      
+    </div>
+
+    <header>
+        <h1></h1>
+        
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+                
+        <nav>
+            <ul class="navegacao-pagina" id="menu">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portifolio">Portifolio</a></li>
+                <li><a href="#section-contato">Contato</a></li>           
+            </ul>
+        </nav>
+    </header>
+    <section id="sobre" class="section-sobrehugo">
+        <div>
+            <h1>BEM-VINDO</h1>
+            <br>
+            <h2 class="sobrehugo"> Me Chamo Hugo Aguiar</h2>
+            <br>
+            <p>Tenho 33 anos, trabalho com engenharia e corretagem de cambio. Atualmente estou cursando 
+            Analise e Desenvolvimento de Sistemas (ADS)e pretendo trabalhar no mercado de TI, mais especificamente com backend ou cibersegurança. 
+            Gosto de aprender coisas novas e tenhos como um dos meus hobbies o desenho. Alguns dos meu trabalhos estão apresentados no portifolio.
+            </p>
+        </div>
+    </section>
+
+    <section id="formacao" class="section-formacao">
+        <div>
+            <h1 >Formação</h1>
+            <br>
+            <br>
+            <h2 class="formacao">Cursos Superior</h2>
+            <p>Engenharia Civil</p>
+            <p>Ciencias Contabeis</p>
+            <p>Analise e Desenvolvimento de Sistemas (Cursando)</p>
+            <br>
+            <h2>Cursos Tecnicos</h2>
+            <p>Tec Manutenção de Hardware e Software</p>
+            <p>Tec Mecanico de Manutenção Industrial</p>
+            <p>Tec Automação Industrial</p>
+            <br>
+            <h2>Informações Complementares</h2>
+            <p>Ingles Fluente</p>
+            <p>Analise de Dados em Power BI</p> 
+            <p>Desenhista</p>   
+        </div>
+    </section>
+
+     <section id="portifolio" class="section-portifolio">
+        <div>
+            <h1>Portifólio</h1>
+            <h2 class="portifolio">Desenhos</h2>
+
+            <div class="carrossel">
+                <div class="galeria">
+                    
+                    <div class="card">
+                        <img src="img/allmight.jpg" alt="imagem do allmight desenho" class="desenho1">
+                        <p>All Might</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/kaneki.jpg" alt="imagem do kaneki desenho" class="desenho2">
+                        <p>Kaneki</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/vastolord.jpg" alt="imagem do vastolord desenho" class="desenho3">
+                        <p>Ichigo Vasto Lord</p>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="img/venom.jpg" alt="imagem do venom desenho" class="desenho4">
+                        <p>Venom</p>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/gonhunter.jpg" alt="imagem do venom desenho" class="desenho5">
+                        <p>Gon </p>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/kaitohunter.jpg" alt="imagem do venom desenho" class="desenho6">
+                        <p>Kaito </p>
+                    </div>
+
+                    <div class="card">
+                        <img src="img/trafalgar.jpg" alt="imagem do venom desenho" class="desenho7">
+                        <p>Trafalgar D. Law</p>
+                    </div>           
+                </div>             
+            </div>            
+            <h2 class="clique">Clique para abri a imagem</h2>
+        </div>
+    </section>
+
+    <section id="section-contato">
+        <h2>Entre em Contato</h2>        
+        <form id="formContato" novalidate>
+            
+            <div class="campo">
+                <label for="nome">Nome</label>
+                <input type="nome" id="nome" placeholder="Digite seu nome completo">      
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail">      
+            </div>
+
+            <div class="campo">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" rows="5" placeholder="Digite sua mensagem"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <p>Mesangem enviada com sucesso !</p>
+                    <button type="button" id="fecharModal">OK</button>
+                </div>
+            </div>
+            
+            <p id="feedback"></p>                        
+
+        </form>
+    </section>
+
+    <button id="btnTopo" class="btn-topo">
+        <i class="fa-solid fa-arrow-up-long"></i>         
+    </button>
+
+    <div id="imagemModal" class="imagem-modal">
+        <span id="fecharImagem">&times;</span>
+        <img id="imagemExpandida">
+    </div>
+
+    <footer>
+        <p>Hugo Aguiar© 2026 - Todos os direitos reservados</p>
+
+        <div class="social">
+            <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </footer>
+
+     <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,506 @@
+/* ---TELA DE LOADING---  */
+#loading-screen{
+    position: fixed;
+    inset: 0;
+    background-color: #060006;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading-percent{
+    font-size: 50px;
+    color: bisque;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ----TELA DE LOADING ATRIBUTOS----- */
+#loading-screen{
+    position: fixed;
+    inset: 0;
+    background-color: rgba(6, 0, 6, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.loading-box{
+    text-align: center;
+    color: bisque;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ---BARRA DE CARREGAMENTO ---- */
+.loading-bar{
+    width: 500px;
+    height: 10px;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+}
+
+.loading-progress{
+    width: 0%;
+    height: 100%;
+    background-color: bisque;
+    transition: width 0.2s ease;
+}
+
+#loading-percent{
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+body.loaded{
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    form{
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ATRIBUTOS GERAIS DA PAGINA */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    max-width: 1280px;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+    background-color: #060006
+}
+
+header{
+    background-color: #4a4549;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/* ---MENU TOGGLE PARA SMARTPHONE E TABLET ---- */
+.menu-toggle{
+    display: none;
+    font-size: 30px;
+    color: bisque;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: auto;
+}
+
+@media (max-width: 768px){
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        position: relative;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    header .navegacao-pagina{
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #4a4549;
+        text-align: center;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    header .navegacao-pagina.ativo{
+        display: flex !important;
+    }
+
+    .navegacao-pagina li a{
+        font-size: 24px;
+    }
+
+}
+
+header .navegacao-pagina{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;    
+} 
+
+header .navegacao-pagina li a {
+    color: bisque;
+    font-size: 30px;
+    text-decoration: none;   
+    padding: 15px;           
+    display: block;          
+}
+
+section h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+section > div {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navegacao-pagina li a:hover{
+    background-color: #3E3B3B;
+    transform: scale(1.2);
+}
+
+/* ---SEÇÃO SOBRE--- */
+
+.section-sobrehugo {
+    background-color: #2B272A;
+    padding: 80px;
+    text-align: center;
+}
+
+.section-sobrehugo h1 {
+    color: bisque;
+}
+
+.section-sobrehugo .sobrehugo{
+    color: bisque;
+}
+
+.section-sobrehugo p{
+    color: bisque;
+}
+
+/* ---SEÇÃO FORMAÇÃO--- */ 
+
+.section-formacao{
+    background-color: #3E3B3B;
+    color: bisque;
+    padding: 30px;
+}
+
+.section-formacao div > * {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section-formacao div > *.mostrar{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---SEÇÃO PORTIFOLIO--- */
+.section-portifolio > div{
+    max-width: 100%;
+    width: 100%;
+}
+.section-portifolio{
+    text-align: center;
+    background-color: #2B272A;
+    padding: 100px 0;
+}
+
+.section-portifolio h1{
+    font-size: 80px;
+    color: bisque;
+}
+
+.section-portifolio h2{
+    color: bisque;
+    padding: 50px;
+    font-size: 30px;
+}
+
+.section-portifolio .clique{
+    color: bisque;
+    padding: 10px;
+    font-size: 15px;
+    gap: 30px;
+}
+
+.carrossel {
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.galeria {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 280px;
+    padding: 12px;
+    gap: 10px;
+    background-color: #3E3B3B;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,2);
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(1.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px; 
+    border-radius: 10px; 
+    margin-bottom: 8px; 
+}
+
+/* ---SEÇÃO CONTATO--- */
+
+section{
+    scroll-margin-top: 80px;
+}
+
+#section-contato {
+    background-color: #3E3B3B;
+    padding: 80px 20px;
+    color: #060006;
+}
+
+#section-contato form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    resize: none;
+}
+
+#section-contato h2{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: bisque;
+}
+
+.campo{
+    margin-bottom: 15px;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #8A8880;
+}
+
+#feedback {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Alerta de Email enviado */ 
+
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    width: 400px;
+    max-width: 90%;
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px solid #2b2b2b;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;   
+}
+
+.modal-content button {
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    background: #2b2b2b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover{
+    background: #8A8880;
+}
+
+.modal.show {
+    display: flex;
+}
+
+/* ---BOTÃO PARA SUBIR A PAGINA---- */
+.btn-topo{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: bisque;
+    color: black;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+.btn-topo:hover{
+    background-color: white;
+    transform: scale(1.1);
+}
+
+/* --- IMAGEM DO CARROSEL --- */
+.imagem-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.imagem-modal img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+#fecharImagem {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.imagem-modal.show{
+    display: flex;
+}
+
+/* FOOTER do PORTIFOLIO */
+
+footer{
+    background-color: #2B272A;
+    color: bisque;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+}
+
+.social{
+    margin-top: 15px;
+}
+
+.social a{
+    color: bisque;
+    margin: 0 10px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    color: white;   
+}
+
+footer p:hover {
+    color: white;
+    transform: scale(1.1);
+}
