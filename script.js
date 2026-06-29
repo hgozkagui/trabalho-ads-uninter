@@ -75,7 +75,7 @@ function inicarEfeitoFormacao() {
 
 }
        
-window.onload = inicarEfeitoFormacao; // sempre a pagina for carregada o efeito começa novamente
+window.addEventListener("load", inicarEfeitoFormacao); // sempre a pagina for carregada o efeito começa novamente
 
 /* --- EFEITO DO PORTIFOLIO NA HORIZONTAL--- */
 const galeria = document.querySelector(".galeria");
@@ -159,6 +159,10 @@ form.addEventListener("submit", function (event) {
         form.reset();
         feedback.textContent = "";
     }, 1500);
+
+    });
+    fecharModal.addEventListener("click", () => {
+        modal.classList.remove("show");
 });
 
 /* ---MODAL PARA OS DESENHOS --- */
@@ -204,10 +208,12 @@ const btnTopo = document.getElementById("btnTopo");
 
 window.addEventListener("scroll", () => {
     if (window.scrollY > 300) {
-        btnTopo.style.display = "block";
+        btnTopo.style.display = "flex";
+
     } else {
         btnTopo.style.display = "none";
     }
+
 });
 
 btnTopo.addEventListener("click", () => {
@@ -216,5 +222,4 @@ btnTopo.addEventListener("click", () => {
         behavior: "smooth"
     });
 
-    menu.classList.remove("ativo");
 });
